@@ -6,6 +6,7 @@ typedef struct	s_data {
 	int		line_length;
 	int		endian;
 }				t_data;
+
 int main()
 {
 

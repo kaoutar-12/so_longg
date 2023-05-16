@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/16 12:55:51 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:27:22 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,18 @@
 # include <fcntl.h>
 # include <mlx.h>
 
+typedef struct	s_data {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_data;
+
+typedef struct game {
+	void *mlx;
+	void *mlx_win;
+} game;
 
 int		check_name(char *s);
 char	**ft_split(char const *s, char c);
@@ -32,10 +44,11 @@ char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen( const char *s);
 char	*get_next_line(int fd);
-int		check_map(char **map);
+int		map_close(char **map);
 char	**map_read(int fd);
 char	*ft_strchr(const char *s, int c);
-int ft_playable(char **map);
+int		ft_playable(char **map);
+int		map_size(char **map);
 
 
 

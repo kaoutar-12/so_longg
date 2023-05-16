@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_name.c                                       :+:      :+:    :+:   */
+/*   map_close.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 13:12:43 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/16 18:40:40 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/05/15 15:57:24 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/05/16 15:49:04 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int check_name(char *s)
+int map_close(char **map)
 {
-	int i = ft_strlen(s);
-	// if (i < 5)
-	// 	return (0);
-	if (i > 5 && (s[i - 1] == 'r' && s[i - 2] == 'e' && s[i - 3] == 'b' && s[i - 4] == '.'))
-		return (1);
-	return (0);
+	int f;
+	int i = 0;
+	int j = 0;
+	f = 0;
+
+	while (map[f])
+		f++;
+	while (map[j][i])
+	{
+		if (map[0][i] != '1' || map[j][ft_strlen(map[j-1])] != '1' || map[j][0] != '1' || map[f-1][i] != '1')
+			return(0);
+		i++;
+		j++;
+		f++;
+	}
+			return(1);
 }
