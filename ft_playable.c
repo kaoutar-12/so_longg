@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_playable.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 16:15:51 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/16 13:59:24 by kmouradi         ###   ########.fr       */
+/*   Created: 2023/05/16 11:39:56 by kmouradi          #+#    #+#             */
+/*   Updated: 2023/05/16 11:40:15 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	main(int ac, char **av)
+int ft_playable(char **map)
 {
-	char **new_map;
-	if (ac == 2)
+	int i = 0;
+	int j = 0;
+	int c = 0;
+	int e = 0;
+	int p = 0;
+	while(map[j])
 	{
-		if (check_name(av[1]) == 1 && ft_playable(av[1]) == 1)
+		while(map[j][i])
 		{
-			int fd = open (av[1], O_RDONLY);
-			new_map = map_read(fd);
-		}
-	}
-		void	*mlx;
-	void	*mlx_win;
+			if(map[j][i] == 'C')
+				c++;
+			else if(map[j][i] == 'E')
+				e++;
+			else if(map[j][i] == 'P')
+				p++;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 640, 640, "Kaoutar msatya");
-	mlx_loop(mlx);
+			i++;
+		}
+		j++;
+	}
+	if (e == 1 && p == 1 && c >= 1)
+		return (1);
+	else
+		return (0);
 }
