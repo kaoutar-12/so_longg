@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:15:51 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/16 18:43:47 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:59:31 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 int	main(int ac, char **av)
 {
 	char	**new_map;
+	t_game	game;
+	// void *mlx;
+	// void *mlx_win;
+
 	if (ac == 2)
 	{
-		puts("here 1");
 		if (check_name(av[1]) == 0)
 		{
-			puts("here 2");
 			exit(write(1, "Error\n", 7));
 		}
 		int fd = open (av[1], O_RDONLY);
@@ -29,11 +31,21 @@ int	main(int ac, char **av)
 			exit(write(1, "Error fd\n", 9));
 		}
 		new_map = map_read(fd);
-		if (ft_playable(new_map) == 1 && map_close(new_map) == 1 && map_size(new_map) == 1)
+		if (map_size(new_map) == 0)
 		{
-			puts("Error");
+			if (ft_playable(new_map) == 0)
+			{
+				if (map_close(new_map) == 0)
+				{
+					// puts(" fddfs ");
+					game.mlx = mlx_init();
+					game.mlx_win = mlx_new_window(game.mlx, 640, 640, "Kaoutar msatya");
+					// game->data->addr = mlx_get_data_addr(game->data->img, &game->data->bits_per_pixel, &game->data->line_length,&game->data->endian);
+					mlx_loop(game.mlx);
+
+				}
+			}
 		}
-		puts("here");
 	}
 	// void	*mlx;
 	// void	*mlx_win;

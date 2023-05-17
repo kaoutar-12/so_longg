@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/16 16:27:22 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:00:25 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@ typedef struct	s_data {
 	int		endian;
 }				t_data;
 
-typedef struct game {
+typedef struct s_game {
 	void *mlx;
 	void *mlx_win;
-} game;
+	t_data *data;
+} t_game;
 
 int		check_name(char *s);
 char	**ft_split(char const *s, char c);
