@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/18 17:38:15 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:35:55 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <fcntl.h>
 # include <mlx.h>
 
-typedef struct	s_data {
+typedef struct s_data{
 	void	*img;
 	char	*addr;
 	size_t	first_line;
@@ -47,7 +47,7 @@ typedef struct s_game {
 	char	*img;
 	int		img_w;
 	int		img_h;
-} t_game;
+}	t_game;
 
 int		check_name(char *s);
 char	**ft_split(char const *s, char c);
@@ -61,6 +61,6 @@ char	*ft_strchr(const char *s, int c);
 int		ft_playable(char **map);
 int		map_size(t_game *game);
 int		map_h(char **map);
-
+void	xpm_to_img(t_game *game);
 
 #endif
