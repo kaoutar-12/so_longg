@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/17 14:00:25 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/18 10:49:38 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_game {
 	void *mlx;
 	void *mlx_win;
 	t_data *data;
+	char **new_map;
 } t_game;
 
 int		check_name(char *s);
