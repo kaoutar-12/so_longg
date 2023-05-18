@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/18 10:49:38 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/18 17:38:15 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,25 @@
 typedef struct	s_data {
 	void	*img;
 	char	*addr;
+	size_t	first_line;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 }				t_data;
 
 typedef struct s_game {
-	void *mlx;
-	void *mlx_win;
-	t_data *data;
-	char **new_map;
+	void	*mlx;
+	void	*mlx_win;
+	t_data	*data;
+	char	**new_map;
+	void	*c;
+	void	*p;
+	void	*w;
+	void	*e;
+	void	*f;
+	char	*img;
+	int		img_w;
+	int		img_h;
 } t_game;
 
 int		check_name(char *s);
@@ -50,8 +59,8 @@ int		map_close(char **map);
 char	**map_read(int fd);
 char	*ft_strchr(const char *s, int c);
 int		ft_playable(char **map);
-int		map_size(char **map);
-
+int		map_size(t_game *game);
+int		map_h(char **map);
 
 
 #endif

@@ -13,7 +13,7 @@ int main()
 	void	*mlx;
 	void	*mlx_win;
     t_data img;
-	char	*relative_path = "./hh.xpm";
+	char	*relative_path = "./ironman.xpm";
 	int		img_width;
 	int		img_height;
 
@@ -22,6 +22,6 @@ int main()
     img.img= mlx_new_image(mlx, 640, 640);
     // img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,&img.endian);
 		img.img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 1);
+	mlx_put_image_to_window(mlx, mlx_win, img.img, 0*50 , 1*50 );
 	mlx_loop(mlx);
 }

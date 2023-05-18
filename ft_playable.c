@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 11:39:56 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/17 13:49:35 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:24:22 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int ft_playable(char **map)
 		j++;
 	}
 	if (e != 1 || p != 1 || c < 1)
-		return (1);
-	else
 		return (0);
+	else
+		return (1);
 }
