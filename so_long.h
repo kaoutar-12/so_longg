@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/19 10:28:57 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/19 14:16:58 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct s_game {
 	int		coli;
 	int		ex;
 	int		pl;
+	// int		pl_x;
+	// int		pl_y;
 }	t_game;
 
 int		check_name(char *s);
@@ -69,4 +71,9 @@ int		map_h(char **map);
 void	xpm_to_img(t_game *game);
 void	img_to_win(t_game *game);
 void	ft_game(t_game *game);
+void	ft_up(t_game *game);
+void	ft_down(t_game *game);
+void	ft_left(t_game *game);
+void	ft_right(t_game *game);
+
 #endif
