@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/20 10:51:04 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/20 11:56:15 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ void	ft_up(t_game *game);
 void	ft_down(t_game *game);
 void	ft_left(t_game *game);
 void	ft_right(t_game *game);
+void ft_close_game(t_game *game);
 
 #endif

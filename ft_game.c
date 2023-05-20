@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:51:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/20 11:15:32 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/20 11:56:54 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	ft_key(int keycode, t_game *game)
 	int	s;
 
 	if (keycode == 53)
-		exit(0);
+		ft_close_game(game);
 	ft_find_player(game);
 	s = game->count_move;
 	if (keycode == 13 || keycode == 126)
