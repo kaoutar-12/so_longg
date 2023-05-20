@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:51:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/20 11:56:54 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:43:29 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	ft_game(t_game *game)
 	xpm_to_img(game);
 	img_to_win(game);
 	mlx_hook(game->mlx_win, 2, 1L << 0, ft_key, game);
+	mlx_hook(game->mlx_win,17,0, ft_close_game, game);
 	mlx_loop(game->mlx);
 }
 // up = 126
