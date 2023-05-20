@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:51:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/19 22:12:49 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/20 11:15:32 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	xpm_to_img(t_game *game)
 {
-	game->p = mlx_xpm_file_to_image (game->mlx, "./new_ironman.xpm", \
+	game->p = mlx_xpm_file_to_image (game->mlx, "./thor.xpm", \
 	&game->img_w, &game->img_h);
-	game->c = mlx_xpm_file_to_image(game->mlx, "./ironman_heart.xpm", \
+	game->c = mlx_xpm_file_to_image(game->mlx, "./thor_hammer.xpm", \
 	&game->img_w, &game->img_h);
 	game->w = mlx_xpm_file_to_image(game->mlx, "./wall.xpm", &game->img_w, \
 	&game->img_h);
@@ -52,26 +52,41 @@ void	img_to_win(t_game *game)
 	}
 }
 
+void	ft_find_player(t_game *game)
+{
+	game->j = -1;
+	while (game->new_map[++game->j])
+	{
+		game->i = -1;
+		while (game->new_map[game->j][++game->i])
+		{
+			if (game->new_map[game->j][game->i] == 'P')
+			{
+				game->p_x = game->i;
+				game->p_y = game->j;
+			}
+		}
+	}
+}
+
 int	ft_key(int keycode, t_game *game)
 {
+	int	s;
+
 	if (keycode == 53)
 		exit(0);
+	ft_find_player(game);
+	s = game->count_move;
 	if (keycode == 13 || keycode == 126)
-	{
 		ft_up(game);
-	}
 	else if (keycode == 1 || keycode == 125)
-	{
 		ft_down(game);
-	}
 	else if (keycode == 0 || keycode == 123)
-	{
 		ft_left(game);
-	}
 	else if (keycode == 2 || keycode == 124)
-	{
 		ft_right(game);
-	}
+	if (s != game->count_move)
+		printf("number of moves :%d\n", game->count_move);
 	img_to_win(game);
 	return (0);
 }
@@ -84,7 +99,7 @@ void	ft_game(t_game *game)
 	map_h(game->new_map) * 50, "so_long");
 	xpm_to_img(game);
 	img_to_win(game);
-	mlx_hook(game->mlx_win, 2, 1L<<0, ft_key, game);
+	mlx_hook(game->mlx_win, 2, 1L << 0, ft_key, game);
 	mlx_loop(game->mlx);
 }
 // up = 126

@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/19 21:51:40 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/20 10:51:04 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ typedef struct s_game {
 	int		ex;
 	int		pl;
 	int		count_move;
-	// int		pl_x;
-	// int		pl_y;
+	int		p_x;
+	int		p_y;
 }	t_game;
 
 int		check_name(char *s);
