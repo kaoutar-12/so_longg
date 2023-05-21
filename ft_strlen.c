@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:02:49 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/15 17:10:46 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 14:33:41 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,3 @@ size_t	ft_strlen( const char *s)
 		i++;
 	return (i);
 }
-// int main ()
-// {
-// 	//printf("%zu\n", ft_strlen(NULL));
-// 		printf("%zu", strlen(NULL));
-// }

@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
@@ -35,6 +35,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 			i++;
 		}
 		str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+		free (s1);
 		return (str);
 	}
 	return (0);

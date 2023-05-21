@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/20 18:42:17 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:23:24 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_game {
 	void	*mlx_win;
 	t_data	*data;
 	char	**new_map;
+	char	**path_map;
 	void	*c;
 	void	*p;
 	void	*w;
@@ -60,11 +61,11 @@ typedef struct s_game {
 int		check_name(char *s);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s1);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen( const char *s);
 char	*get_next_line(int fd);
 int		map_close(char **map);
-char	**map_read(int fd);
+char	**map_read(int fd, t_game *game);
 char	*ft_strchr(const char *s, int c);
 int		ft_playable(t_game *game);
 int		map_size(t_game *game);
@@ -73,10 +74,13 @@ void	xpm_to_img(t_game *game);
 void	img_to_win(t_game *game);
 void	ft_game(t_game *game);
 void	ft_up(t_game *game);
+void pp(t_game *game);
 void	ft_down(t_game *game);
 void	ft_left(t_game *game);
 void	ft_right(t_game *game);
 int		ft_close_game(t_game *game);
-int		valid_path(t_game game);
+// int		valid_path(t_game *game);
+void	ft_find_player(t_game *game);
+int    valid_path(t_game *game);
 
 #endif
