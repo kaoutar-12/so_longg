@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 15:23:24 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 16:05:24 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,11 @@ void	xpm_to_img(t_game *game);
 void	img_to_win(t_game *game);
 void	ft_game(t_game *game);
 void	ft_up(t_game *game);
-void pp(t_game *game);
 void	ft_down(t_game *game);
 void	ft_left(t_game *game);
 void	ft_right(t_game *game);
 int		ft_close_game(t_game *game);
-// int		valid_path(t_game *game);
 void	ft_find_player(t_game *game);
-int    valid_path(t_game *game);
+int		valid_path(t_game *game);
 
 #endif

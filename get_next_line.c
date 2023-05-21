@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:09:00 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 15:16:45 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 16:05:50 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	// system ("leaks so_long");
 	if (str == NULL)
 		str = ft_strdup("");
 	str = to_read(str, fd);

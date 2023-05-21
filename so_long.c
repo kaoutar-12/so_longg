@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:15:51 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 15:32:34 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:57:38 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int	main(int ac, char **av)
 			exit(write(1, "Error fd\n", 9));
 		game->new_map = map_read(fd, game);
 		if (map_size(game) == 1 && map_close(game->new_map) == 1
-		&& ft_playable(game) == 1 && valid_path(game)== 1)
+			&& ft_playable(game) == 1 && valid_path(game) == 1)
 			ft_game(game);
 	}
-
 }
