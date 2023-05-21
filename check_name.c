@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:12:43 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 14:34:48 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 21:23:12 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,9 @@ int	check_name(char *s)
 	&& s[game.i - 3] == 'b'\
 	&& s[game.i - 4] == '.'))
 		return (1);
-	return (0);
+	else
+	{
+		ft_printf("the name is wrong !!!\n");
+		return (0);
+	}
 }

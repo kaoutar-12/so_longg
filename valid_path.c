@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:04:06 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 16:04:50 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:20:47 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	valid_path(t_game *game)
 
 	while (check_p(game) == 0)
 	{
-		find_P(game);
+		find_p(game);
 	}
 	i = 0;
 	while (game->path_map && game->path_map[i])
@@ -99,6 +99,7 @@ int	valid_path(t_game *game)
 		{
 			if (game->path_map[i][j] == 'C' || game->path_map[i][j] == 'E')
 			{
+				ft_printf("wrong map\n");
 				return (0);
 			}
 			j++;

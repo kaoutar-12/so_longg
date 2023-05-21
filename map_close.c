@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:57:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 15:55:20 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 21:33:42 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ int	map_close(char **map)
 			if (map[0][game.i] != '1' || map[game.j][0] != '1' || \
 			map[game.j][last_colomn - 1] != '1' || \
 			map[last_row - 1][game.i] != '1')
+			{
+				ft_printf("the map is not surrounded by walls.\n");
 				return (0);
+			}
 		}
 	}
 	return (1);

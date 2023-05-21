@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 12:44:03 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 16:05:24 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:39:41 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 # include <ctype.h>
 # include <fcntl.h>
 # include <mlx.h>
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_data{
 	void	*img;
 	char	*addr;
-	size_t	first_line;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
@@ -56,6 +56,7 @@ typedef struct s_game {
 	int		count_move;
 	int		p_x;
 	int		p_y;
+	size_t	first_line;
 }	t_game;
 
 int		check_name(char *s);

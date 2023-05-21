@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 11:39:56 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/19 18:50:38 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/21 20:24:59 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ int	ft_playable(t_game *game)
 		}
 	}
 	if (game->ex != 1 || game->pl != 1 || game->coli < 1)
+	{
+		ft_printf("the number of exit or player or collectible is wrong\n");
 		return (0);
+	}
 	else
 		return (1);
 }
