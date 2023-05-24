@@ -24,7 +24,7 @@
 # include <ctype.h>
 # include <fcntl.h>
 # include <mlx.h>
-# include "ft_printf/ft_printf.h"
+# include "printf/ft_printf.h"
 
 typedef struct s_data{
 	void	*img;

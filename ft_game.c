@@ -6,11 +6,17 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:51:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 16:06:19 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/24 08:23:52 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	printmsg1()
+{
+	ft_printf("xpm file empty!!!");
+	exit(1);
+}
 
 void	xpm_to_img(t_game *game)
 {
@@ -24,6 +30,8 @@ void	xpm_to_img(t_game *game)
 	&game->img_h);
 	game->f = mlx_xpm_file_to_image(game->mlx, "./floor.xpm", &game->img_w, \
 	&game->img_h);
+	if (!game->f || !game->p || !game->c || !game->w || !game->e)
+		printmsg1();
 }
 
 void	img_to_win(t_game *game)
@@ -99,7 +107,7 @@ void	ft_game(t_game *game)
 	map_h(game->new_map) * 50, "so_long");
 	xpm_to_img(game);
 	img_to_win(game);
-	mlx_hook(game->mlx_win, 2, 1L << 0, ft_key, game);
+	mlx_hook(game->mlx_win, 2, 0, ft_key, game);
 	mlx_hook(game->mlx_win, 17, 0, ft_close_game, game);
 	mlx_loop(game->mlx);
 }

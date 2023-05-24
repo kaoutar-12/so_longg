@@ -24,17 +24,17 @@ NAME=so_long
 all: ftprintf ${NAME}
 
 ${NAME}:${OBJECT}
-	${CC} ${FLAGS} ${OBJECT} ${LINKS} ft_printf/libftprintf.a -o ${NAME}
+	${CC} ${FLAGS} ${OBJECT} ${LINKS} printf/libftprintf.a -o ${NAME}
 
 %.o: %.c  so_long.h
 	${CC} ${FLAGS} -c $<
 
 clean:
-	cd ft_printf && make clean
+	cd printf && make clean
 	${CN} ${OBJECT}
 
 fclean: clean
-	cd ft_printf && make fclean
+	cd printf && make fclean
 	${CN} ${NAME}
 
 re: fclean all
@@ -42,4 +42,4 @@ re: fclean all
 .PHONY: all bonus clean fclean re
 
 ftprintf :
-	cd ft_printf && make
+	cd printf && make

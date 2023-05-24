@@ -6,11 +6,17 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:57:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/21 21:33:42 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/24 08:39:01 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	printmsg3()
+{
+	ft_printf("map size is big!!");
+	exit(1);
+}
 
 int	map_h(char **map)
 {
@@ -40,6 +46,8 @@ int	map_close(char **map)
 	game.j = -1;
 	last_row = map_h(map);
 	last_colomn = map_w(map);
+	if (last_colomn > 165 || last_row > 164)
+		printmsg3();
 	while (map[++game.j])
 	{
 		game.i = -1;
