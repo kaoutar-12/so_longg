@@ -6,13 +6,13 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:57:24 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/24 08:39:01 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/24 09:22:24 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	printmsg3()
+void	printmsg3(void)
 {
 	ft_printf("map size is big!!");
 	exit(1);

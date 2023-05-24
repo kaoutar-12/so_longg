@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:04:06 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/24 08:13:29 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/24 09:20:59 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,17 @@ int	check_p(t_game *game)
 
 void	fill_p(t_game *game, int posY, int posX)
 {
-	if (game->path_map[posX - 1][posY] == '0' || game->path_map[posX - 1][posY] == 'C' )
+	if (game->path_map[posX - 1][posY] == '0'
+	|| game->path_map[posX - 1][posY] == 'C')
 		game->path_map[posX - 1][posY] = 'P';
-	if (game->path_map[posX + 1][posY] == '0' || game->path_map[posX + 1][posY] == 'C' )
+	if (game->path_map[posX + 1][posY] == '0'
+	|| game->path_map[posX + 1][posY] == 'C')
 		game->path_map[posX + 1][posY] = 'P';
-	if (game->path_map[posX][posY - 1] == '0' || game->path_map[posX][posY - 1] == 'C' )
+	if (game->path_map[posX][posY - 1] == '0'
+	|| game->path_map[posX][posY - 1] == 'C')
 		game->path_map[posX][posY - 1] = 'P';
-	if (game->path_map[posX][posY + 1] == '0' || game->path_map[posX][posY + 1] == 'C' )
+	if (game->path_map[posX][posY + 1] == '0'
+	|| game->path_map[posX][posY + 1] == 'C')
 		game->path_map[posX][posY + 1] = 'P';
 }
 

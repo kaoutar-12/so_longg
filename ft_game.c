@@ -6,13 +6,13 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:51:19 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/24 08:23:52 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/24 09:25:38 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	printmsg1()
+void	printmsg1(void)
 {
 	ft_printf("xpm file empty!!!");
 	exit(1);
@@ -97,17 +97,4 @@ int	ft_key(int keycode, t_game *game)
 		printf("number of moves :%d\n", game->count_move);
 	img_to_win(game);
 	return (0);
-}
-
-void	ft_game(t_game *game)
-{
-	game->count_move = 0;
-	game->mlx = mlx_init();
-	game->mlx_win = mlx_new_window(game->mlx, ft_strlen(game->new_map[0]) * 50, \
-	map_h(game->new_map) * 50, "so_long");
-	xpm_to_img(game);
-	img_to_win(game);
-	mlx_hook(game->mlx_win, 2, 0, ft_key, game);
-	mlx_hook(game->mlx_win, 17, 0, ft_close_game, game);
-	mlx_loop(game->mlx);
 }

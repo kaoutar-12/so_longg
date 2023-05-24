@@ -6,7 +6,7 @@
 /*   By: kmouradi <kmouradi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:48:09 by kmouradi          #+#    #+#             */
-/*   Updated: 2023/05/24 09:03:59 by kmouradi         ###   ########.fr       */
+/*   Updated: 2023/05/24 09:23:25 by kmouradi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_close_game(t_game *game)
 	int	j;
 
 	j = 0;
-	while(game->new_map[j])
+	while (game->new_map[j])
 	{
 		free(game->new_map[j]);
 		j++;
